@@ -20,7 +20,7 @@ From the repo root:
 npx wrangler deploy --dry-run
 ```
 
-Expect it to read about 25 asset files from `./website`. `git ls-files website | wc -l` currently gives 23 tracked files; Wrangler counted 25 in a test run of this config. If the count is very different from that, stop and report.
+Expect it to read about 23 asset files from `./website`. `git ls-files website | wc -l` currently gives 21 tracked files; Wrangler counted 23 in a dry run of this config. If the count is very different from that, stop and report.
 
 ## 2. Deploy
 
