@@ -1,6 +1,8 @@
 {
   // Nd40 static website. Deploy with: npx wrangler deploy
   "name": "nd40-website",
+  // The nd40 account. Pinned so a deploy cannot land on another account.
+  "account_id": "dfcaecbe9c0862934eb4dfcd5f3349d5",
   // Set to the date of deployment
   "compatibility_date": "2026-11-24",
   "assets": {
