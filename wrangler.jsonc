@@ -9,7 +9,10 @@
     "directory": "./website",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
-  }
-  // After the first deploy succeeds, add the production domain:
-  // "routes": [{ "pattern": "[DOMAIN]", "custom_domain": true }]
+  },
+  // Custom domains: Cloudflare creates their DNS records and certificates.
+  "routes": [
+    { "pattern": "nd40.com", "custom_domain": true },
+    { "pattern": "www.nd40.com", "custom_domain": true }
+  ]
 }
