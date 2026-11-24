@@ -35,7 +35,7 @@ Check each of these against `https://nd40.com`:
 | Request | Expected |
 |---|---|
 | `/` | 200, the home page with six cards |
-| `/about`, `/work`, `/careers`, `/contact`, `/manta`, `/documentation`, `/request-access`, `/terms`, `/privacy`, `/security` | 200 each |
+| `/about`, `/work`, `/careers`, `/contact`, `/request-access`, `/terms`, `/privacy`, `/security` | 200 each |
 | `/about.html` | redirects to `/about` (normal for `auto-trailing-slash`) |
 | `/assets/site.css` | 200, `text/css` |
 | `/assets/fonts/oxanium.ttf` | 200 |
