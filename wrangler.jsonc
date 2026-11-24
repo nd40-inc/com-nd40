@@ -1,0 +1,13 @@
+{
+  // Nd40 static website. Deploy with: npx wrangler deploy
+  "name": "nd40-website",
+  // Set to the date of deployment
+  "compatibility_date": "2026-11-24",
+  "assets": {
+    "directory": "./website",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+  // After the first deploy succeeds, add the production domain:
+  // "routes": [{ "pattern": "[DOMAIN]", "custom_domain": true }]
+}

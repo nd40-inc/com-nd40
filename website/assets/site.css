@@ -1,0 +1,12 @@
+/* Nd40 site styles. Fonts are self-hosted (SIL Open Font License). */
+@font-face{font-family:'Oxanium';src:url(fonts/oxanium.ttf) format('truetype');font-weight:200 800;font-display:swap}
+@font-face{font-family:'JetBrains Mono';src:url(fonts/jetbrainsmono.ttf) format('truetype');font-weight:100 800;font-display:swap}
+@font-face{font-family:'STIX Two Text';src:url(fonts/stixtwotext.ttf) format('truetype');font-weight:400 700;font-display:swap}
+@font-face{font-family:'STIX Two Text';src:url(fonts/stixtwotext-italic.ttf) format('truetype');font-style:italic;font-weight:400 700;font-display:swap}
+@font-face{font-family:'STIX Two Math';src:url(fonts/stixtwomath.ttf) format('truetype');font-display:swap}
+@font-face{font-family:'CMU Typewriter';src:url(fonts/cmu-typewriter-roman.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'CMU Typewriter';src:url(fonts/cmu-typewriter-italic.woff2) format('woff2');font-weight:400;font-style:italic;font-display:swap}
+body{margin:0;background:#0E0F12}
+a{color:#A2A8B9}a:hover{color:#ECEDEF}
+a:focus-visible{outline:2px solid #FF7A45;outline-offset:3px;border-radius:2px}
+a[aria-current="page"]{color:#ECEDEF}
