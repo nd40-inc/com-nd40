@@ -20,7 +20,7 @@ From the repo root:
 npx wrangler deploy --dry-run
 ```
 
-Expect it to read about 25 asset files from `./website`. `git ls-files website | wc -l` currently gives 23 tracked files; Wrangler counted 25 in a test run of this config. If the count is very different from that, stop and report.
+Expect it to read about 23 asset files from `./website`. `git ls-files website | wc -l` currently gives 21 tracked files; Wrangler counted 23 in a dry run of this config. If the count is very different from that, stop and report.
 
 ## 2. Deploy
 
@@ -35,7 +35,7 @@ Check each of these against `https://nd40.com`:
 | Request | Expected |
 |---|---|
 | `/` | 200, the home page with six cards |
-| `/about`, `/work`, `/careers`, `/contact`, `/manta`, `/documentation`, `/request-access`, `/terms`, `/privacy`, `/security` | 200 each |
+| `/about`, `/work`, `/careers`, `/contact`, `/request-access`, `/terms`, `/privacy`, `/security` | 200 each |
 | `/about.html` | redirects to `/about` (normal for `auto-trailing-slash`) |
 | `/assets/site.css` | 200, `text/css` |
 | `/assets/fonts/oxanium.ttf` | 200 |
