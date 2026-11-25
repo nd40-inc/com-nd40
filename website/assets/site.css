@@ -22,4 +22,14 @@ a:active {
 a[aria-current="page"] {
   color: #B5ECF8;
 }
+/* Footer links keep the original grey, white on hover and for the current page, with no transition */
+nav[aria-label="Footer"] a {
+  color: #A2A8B9;
+  transition: none;
+}
+nav[aria-label="Footer"] a:hover,
+nav[aria-label="Footer"] a:active,
+nav[aria-label="Footer"] a[aria-current="page"] {
+  color: #ECEDEF;
+}
 a:focus-visible{outline:2px solid #FF7A45;outline-offset:3px;border-radius:2px}
