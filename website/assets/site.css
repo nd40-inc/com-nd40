@@ -167,8 +167,8 @@ header.band-top + main:has(> .paper:first-child) > .paper:first-child{margin-top
 main.paper + section.band{margin-top:-2.5rem}
 main:has(> .paper:last-child) + section.band{margin-top:-2.5rem}
 /* Motto shimmer: a soft light band drifts slowly across the grey text, then rests. Off when the visitor prefers reduced motion. */
-.shimmer{background:linear-gradient(90deg,#9A9A9A 0%,#9A9A9A 43%,#D6D6D6 48%,#D6D6D6 52%,#9A9A9A 57%,#9A9A9A 100%);background-size:300% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s ease-in-out infinite}
-@keyframes shimmer{0%{background-position:100% 0}60%,100%{background-position:0% 0}}
+.shimmer{background:linear-gradient(90deg,#9A9A9A 0%,#9A9A9A 43%,#D6D6D6 48%,#D6D6D6 52%,#9A9A9A 57%,#9A9A9A 100%);background-size:300% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 5s ease-in-out infinite}
+@keyframes shimmer{0%{background-position:100% 0}72%,100%{background-position:0% 0}}
 @media (prefers-reduced-motion:reduce){.shimmer{animation:none;-webkit-text-fill-color:#C2C2C2}}
 /* Content cards on single-panel pages: no extra space above the first item */
 main > div[style*="border-radius: 16px"] > :first-child{margin-top:0!important}
