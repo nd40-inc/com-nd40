@@ -160,24 +160,24 @@ a:focus-visible {
 }
 
 .site-nav a.nav-cta {
-  color: #FF8A5B;
-  border: 1px solid rgba(255, 122, 69, 0.5);
-  background: rgba(255, 122, 69, 0.08);
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+  background: rgba(255, 255, 255, 0.05);
   padding: 0 14px;
   margin-left: 4px;
 }
 
 .site-nav a.nav-cta:hover,
 .site-nav a.nav-cta:focus-visible {
-  background: rgba(255, 122, 69, 0.2);
-  border-color: #FF7A45;
-  color: #FFB08F;
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--text);
+  color: #FFFFFF;
 }
 
 .site-nav a.nav-cta[aria-current="page"] {
-  background: rgba(255, 122, 69, 0.22);
-  border-color: #FF7A45;
-  color: #F2F2F2;
+  background: rgba(255, 255, 255, 0.14);
+  border-color: var(--text);
+  color: #FFFFFF;
 }
 
 @media (max-width: 760px) {
@@ -253,16 +253,16 @@ main a.btn {
 }
 
 main a.btn-primary {
-  background: #FF7A45;
+  background: #F2F2F2;
   color: #16181D;
-  border: 1px solid #FF7A45;
+  border: 1px solid #F2F2F2;
   font-weight: 500;
 }
 
 main a.btn-primary:hover,
 main a.btn-primary:focus-visible {
-  background: #FF9062;
-  border-color: #FF9062;
+  background: #FFFFFF;
+  border-color: #FFFFFF;
   color: #16181D;
 }
 
@@ -353,7 +353,7 @@ main a.btn-secondary:focus-visible {
   display: flex;
   flex-direction: column;
   gap: 6px;
-  flex: 0 1 280px;
+  flex: 1 1 340px;
 }
 
 .footer-brand .brand {
@@ -592,7 +592,6 @@ nav[aria-label="Footer"] a[aria-current="page"] {
   margin: 0;
   padding: 0;
   list-style: none;
-  border-bottom: 1px solid var(--border);
 }
 
 .team-row {
@@ -814,8 +813,8 @@ nav[aria-label="Footer"] a[aria-current="page"] {
   --text-faint: #5E626B;
   --border: #DCDEE2;
   --border-strong: #C6C9CE;
-  --accent: #B84010;
-  --accent-green: #0F7D40;
+  --accent: #E6007A;
+  --accent-green: #0066FF;
   --link: #4A5600;
   --link-hover: #2F3700;
   --link-underline: rgba(74, 86, 0, 0.45);
