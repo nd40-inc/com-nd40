@@ -6,30 +6,178 @@
 @font-face{font-family:'STIX Two Math';src:url(fonts/stixtwomath.ttf) format('truetype');font-display:swap}
 @font-face{font-family:'CMU Typewriter';src:url(fonts/cmu-typewriter-roman.woff2) format('woff2');font-weight:400;font-style:normal;font-display:swap}
 @font-face{font-family:'CMU Typewriter';src:url(fonts/cmu-typewriter-italic.woff2) format('woff2');font-weight:400;font-style:italic;font-display:swap}
-body{margin:0;background:#0E0F12}
-/* Links: ice, brighter ice on hover */
-a {
-  color: #7FD4E8;
-  text-decoration-color: #2F5F6B;
-  text-underline-offset: 4px;
-  transition: color 120ms ease, text-decoration-color 120ms ease;
+body{margin:0;background:#1F2125;overflow-x:clip}
+/* Links: a soft chartreuse "lowlighter" behind the text, a touch stronger on hover. */
+main a {
+  background: rgba(214, 240, 60, 0.11);
+  color: #D3E46A;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9em;
+  border-radius: 6px;
+  padding: 2px 8px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 120ms ease, color 120ms ease;
 }
-a:hover,
-a:active {
-  color: #B5ECF8;
-  text-decoration-color: #7FD4E8;
+main a:hover,
+main a:focus-visible {
+  background: rgba(214, 240, 60, 0.2);
+  color: #E6F58A;
 }
-a[aria-current="page"] {
-  color: #B5ECF8;
-}
-/* Footer links keep the original grey, white on hover and for the current page, with no transition */
 nav[aria-label="Footer"] a {
-  color: #A2A8B9;
-  transition: none;
+  display: inline-block;
+  margin: 5px 0 5px -10px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 16px;
+  color: #C2C2C2;
+  text-decoration: none;
+  transition: background 120ms ease, color 120ms ease;
 }
 nav[aria-label="Footer"] a:hover,
-nav[aria-label="Footer"] a:active,
-nav[aria-label="Footer"] a[aria-current="page"] {
-  color: #ECEDEF;
+nav[aria-label="Footer"] a:focus-visible {
+  background: rgba(214, 240, 60, 0.11);
+  color: #D3E46A;
 }
 a:focus-visible{outline:2px solid #FF7A45;outline-offset:3px;border-radius:2px}
+/* Case study comparison rows: label, Nd40, studio, multiple, then one bar: the track is the studio, the blue fill is Nd40 */
+.cmp-row{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr) minmax(0,1fr) 96px;gap:10px 40px;align-items:baseline;padding:18px 0;border-top:1px solid #30333A}
+.cmp-x{text-align:left;align-self:center}
+.cmp-bar{grid-column:2/4}
+@media (max-width:700px){
+  .cmp-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px 20px}
+  .cmp-label{grid-area:1/1}
+  .cmp-x{grid-area:1/2}
+  .cmp-nd{grid-area:2/1}
+  .cmp-st{grid-area:2/2}
+  .cmp-bar{grid-area:3/1/4/3}
+  .cmp-head{display:none}
+}
+/* Case study role mapping rows: studio role, MANTA role. Stacks on phones. */
+.map-row{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:6px 40px;align-items:baseline;padding:16px 0;border-top:1px solid #30333A}
+@media (max-width:700px){
+  .map-row{grid-template-columns:minmax(0,1fr)}
+  .map-head{display:none}
+}
+/* Case study MANTA steps: six across on wide screens, two across on phones */
+.steps{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:48px 28px}
+@media (max-width:900px){.steps{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* Case study MANTA team table: studio role, humans or agents, issues, PRs, review rounds, agent cycles, MANTA group */
+.team-row{display:grid;grid-template-columns:minmax(0,0.85fr) 220px minmax(0,1.15fr);gap:12px 64px;align-items:start;padding:20px 0;border-top:1px solid #30333A}
+.team-name{align-self:start}
+.team-row .team-metrics{margin-top:1px}
+.team-stagehead{display:flex;align-items:center;gap:14px;padding:28px 0 10px}
+.team-stagehead + .team-row{border-top-color:#30333A}
+.team-total{border-top-color:#5A5D64}
+@media (max-width:760px){
+  .team-row{grid-template-columns:minmax(0,1fr);gap:12px}
+  .team-head{display:none}
+}
+/* Three-card grids: three across down to 900px, two to 600px, then one */
+.cards3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.cards3 svg{max-width:100%;height:auto}
+@media (max-width:899px){.cards3{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.cards3{grid-template-columns:minmax(0,1fr)}}
+/* Case study stats (6 across) and engineering grid (4 across), fewer columns on small screens */
+.cs-stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr))}
+.cs-specs{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}
+@media (max-width:900px){.cs-stats{grid-template-columns:repeat(3,minmax(0,1fr))}.cs-specs{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.cs-specs{grid-template-columns:minmax(0,1fr)}}
+
+/* Paper sections: full-width cream bands that alternate with the dark ones.
+   The inline dark palette is remapped to its paper equivalent here. */
+.paper{color:#16181D;border-image:conic-gradient(#FDFDFD 0 0) fill 0//0 100vmax;padding:54px 0}
+.paper a{background:rgba(150,170,0,0.16);color:#4A5600}
+.paper a:hover,.paper a:focus-visible{background:rgba(150,170,0,0.28);color:#2F3700}
+.paper [style*="color: #F2F2F2"]{color:#16181D!important}
+.paper [style*="background: #F2F2F2"]{background:#16181D!important}
+.paper [style*="solid #F2F2F2"],.paper [style*="dashed #F2F2F2"]{border-color:#16181D!important}
+.paper [fill="#F2F2F2"]{fill:#16181D}
+.paper [stroke="#F2F2F2"]{stroke:#16181D}
+.paper [style*="color: #C2C2C2"]{color:#4A4E57!important}
+.paper [style*="background: #C2C2C2"]{background:#4A4E57!important}
+.paper [style*="solid #C2C2C2"],.paper [style*="dashed #C2C2C2"]{border-color:#4A4E57!important}
+.paper [fill="#C2C2C2"]{fill:#4A4E57}
+.paper [stroke="#C2C2C2"]{stroke:#4A4E57}
+.paper [style*="color: #999999"]{color:#6C717B!important}
+.paper [style*="background: #999999"]{background:#6C717B!important}
+.paper [style*="solid #999999"],.paper [style*="dashed #999999"]{border-color:#6C717B!important}
+.paper [fill="#999999"]{fill:#6C717B}
+.paper [stroke="#999999"]{stroke:#6C717B}
+.paper [style*="color: #8A8A8A"]{color:#7C808A!important}
+.paper [style*="background: #8A8A8A"]{background:#7C808A!important}
+.paper [style*="solid #8A8A8A"],.paper [style*="dashed #8A8A8A"]{border-color:#7C808A!important}
+.paper [fill="#8A8A8A"]{fill:#7C808A}
+.paper [stroke="#8A8A8A"]{stroke:#7C808A}
+.paper [style*="color: #2B2D33"]{color:#EAEBEE!important}
+.paper [style*="background: #2B2D33"]{background:#EAEBEE!important}
+.paper [style*="solid #2B2D33"],.paper [style*="dashed #2B2D33"]{border-color:#EAEBEE!important}
+.paper [fill="#2B2D33"]{fill:#EAEBEE}
+.paper [stroke="#2B2D33"]{stroke:#EAEBEE}
+.paper [style*="color: #30333A"]{color:#DCDEE2!important}
+.paper [style*="background: #30333A"]{background:#DCDEE2!important}
+.paper [style*="solid #30333A"],.paper [style*="dashed #30333A"]{border-color:#DCDEE2!important}
+.paper [fill="#30333A"]{fill:#DCDEE2}
+.paper [stroke="#30333A"]{stroke:#DCDEE2}
+.paper [style*="color: #000000"]{color:#FFFFFF!important}
+.paper [style*="background: #000000"]{background:#FFFFFF!important}
+.paper [style*="solid #000000"],.paper [style*="dashed #000000"]{border-color:#FFFFFF!important}
+.paper [fill="#000000"]{fill:#FFFFFF}
+.paper [stroke="#000000"]{stroke:#FFFFFF}
+.paper [style*="color: #2A2C31"]{color:#EEEFF1!important}
+.paper [style*="background: #2A2C31"]{background:#EEEFF1!important}
+.paper [style*="solid #2A2C31"],.paper [style*="dashed #2A2C31"]{border-color:#EEEFF1!important}
+.paper [fill="#2A2C31"]{fill:#EEEFF1}
+.paper [stroke="#2A2C31"]{stroke:#EEEFF1}
+.paper [style*="color: #121212"]{color:#FFFFFF!important}
+.paper [style*="background: #121212"]{background:#FFFFFF!important}
+.paper [style*="solid #121212"],.paper [style*="dashed #121212"]{border-color:#FFFFFF!important}
+.paper [fill="#121212"]{fill:#FFFFFF}
+.paper [stroke="#121212"]{stroke:#FFFFFF}
+.paper [style*="color: #D4D4D4"]{color:#16181D!important}
+.paper [style*="background: #D4D4D4"]{background:#16181D!important}
+.paper [style*="solid #D4D4D4"],.paper [style*="dashed #D4D4D4"]{border-color:#16181D!important}
+.paper [style*="solid #5A5D64"]{border-color:#C6C9CE!important}
+.paper [fill="#D4D4D4"]{fill:#16181D}
+.paper [stroke="#D4D4D4"]{stroke:#16181D}
+.paper [style*="color: #4C4C4C"]{color:#C9CBD0!important}
+.paper [style*="background: #4C4C4C"]{background:#C9CBD0!important}
+.paper [style*="solid #4C4C4C"],.paper [style*="dashed #4C4C4C"]{border-color:#C9CBD0!important}
+.paper [fill="#4C4C4C"]{fill:#C9CBD0}
+.paper [stroke="#4C4C4C"]{stroke:#C9CBD0}
+.paper [style*="inset 0 0 0 1px #30333A"]{box-shadow:inset 0 0 0 1px #DCDEE2!important}
+.paper .cmp-row,.paper .team-row,.paper .map-row{border-top-color:#DCDEE2}
+
+.paper [style*="background: #1F2125"]{background:#FFFFFF!important}
+/* Header and footer bands: the menu-overlay charcoal, full width */
+/* Header and footer sit on the page color, set off by full-width hairlines */
+.band{position:relative}
+.band-top::after,section.band::before{content:"";position:absolute;left:0;right:0;height:1px;border-image:conic-gradient(#3C4043 0 0) fill 0//0 100vmax;pointer-events:none}
+.band-top::after{bottom:0}
+section.band::before{top:0}
+.band-top{border-image-outset:2rem 100vmax 0;padding-bottom:28px}
+nav[aria-label="Footer"]{position:relative}
+section.band{border-image-outset:0 100vmax 2.5rem;padding-top:56px!important;margin-top:40px}
+.band-bottom{border-image-outset:0 100vmax 2rem}
+/* Cream bands that sit right under the header or right above the footer meet the band with no dark strip */
+header.band-top + main.paper,
+header.band-top + main:has(> .paper:first-child){margin-top:calc(1.667rem - 2.5rem)!important}
+header.band-top + main:has(> .paper:first-child) > .paper:first-child{margin-top:0!important}
+main.paper + section.band{margin-top:-2.5rem}
+main:has(> .paper:last-child) + section.band{margin-top:-2.5rem}
+/* Motto shimmer: a soft light band drifts slowly across the grey text, then rests. Off when the visitor prefers reduced motion. */
+.shimmer{background:linear-gradient(90deg,#9A9A9A 0%,#9A9A9A 43%,#D6D6D6 48%,#D6D6D6 52%,#9A9A9A 57%,#9A9A9A 100%);background-size:300% 100%;background-position:100% 0;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shimmer 6s ease-in-out infinite}
+@keyframes shimmer{0%{background-position:100% 0}60%,100%{background-position:0% 0}}
+@media (prefers-reduced-motion:reduce){.shimmer{animation:none;-webkit-text-fill-color:#C2C2C2}}
+/* Content cards on single-panel pages: no extra space above the first item */
+main > div[style*="border-radius: 16px"] > :first-child{margin-top:0!important}
+/* Work domain chips, color coded by kind of work */
+.paper .cap{border-radius:6px!important}
+.paper .cap-sim{background:#E0EDF5!important;color:#4A7F9E!important}
+.paper .cap-sense{background:#E2F0DC!important;color:#55893F!important}
+.paper .cap-predict{background:#F7E9DA!important;color:#A86A30!important}
+.paper .cap-opt{background:#F4E3EE!important;color:#A2588A!important}
+.paper .cap-gen{background:#F0F0D5!important;color:#7E8124!important}
+/* Work domains on phones: name above its chips */
+@media (max-width:700px){section[aria-label="Domains"] li{grid-template-columns:minmax(0,1fr)!important;gap:10px!important}}
