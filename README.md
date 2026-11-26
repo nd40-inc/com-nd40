@@ -4,7 +4,7 @@
 - **print/**: `nd40-icon.pdf` is vector and scales to any size. `nd40-icon-4096.png` is a 4096 px raster at 300 dpi (about 13.6 in / 34.7 cm square).
 - **github/**: `nd40-github.png`, 1024 px, full bleed with no border. Upload as the GitHub avatar; GitHub rounds the corners itself.
 - **svg/**: `nd40-icon.svg`, the master icon with lettering converted to outlines, so it needs no fonts.
-- **website/**: the static site (plain HTML and one CSS file, no build step, no JavaScript). Open `index.html` to preview it. The logo returns home from every page. Subpage text in [square brackets] is placeholder copy.
+- **website/**: the static site (plain HTML and one CSS file, no build step, no JavaScript). Open `index.html` to preview it. The logo returns home from every page.
 - **LICENSES/fonts/**: licence texts for the self-hosted fonts.
 - **wrangler.jsonc**: Cloudflare Worker config that serves `website/` as static assets.
 

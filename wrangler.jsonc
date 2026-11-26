@@ -5,6 +5,7 @@
   "account_id": "dfcaecbe9c0862934eb4dfcd5f3349d5",
   // Set to the date of deployment
   "compatibility_date": "2026-11-24",
+  "workers_dev": false,
   "assets": {
     "directory": "./website",
     "html_handling": "auto-trailing-slash",

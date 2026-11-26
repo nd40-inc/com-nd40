@@ -20,7 +20,7 @@ From the repo root:
 npx wrangler deploy --dry-run
 ```
 
-Expect it to read about 23 asset files from `./website`. `git ls-files website | wc -l` currently gives 21 tracked files; Wrangler counted 23 in a dry run of this config. If the count is very different from that, stop and report.
+Expect it to read about 24–26 asset files from `./website` (`_headers` is processed as a Cloudflare Assets config file rather than served directly). If the count is very different from that, stop and report.
 
 ## 2. Deploy
 
@@ -35,14 +35,14 @@ Check each of these against `https://nd40.com`:
 | Request | Expected |
 |---|---|
 | `/` | 200, the home page with six cards |
-| `/about`, `/work`, `/careers`, `/contact`, `/request-access`, `/terms`, `/privacy`, `/security` | 200 each |
-| `/about.html` | redirects to `/about` (normal for `auto-trailing-slash`) |
+| `/work`, `/case-studies`, `/careers`, `/contact`, `/request-access`, `/terms`, `/privacy`, `/security` | 200 each |
 | `/assets/site.css` | 200, `text/css` |
-| `/assets/fonts/oxanium.ttf` | 200 |
-| `/favicon.ico` | 200 |
+| `/assets/fonts/oxanium.woff2` | 200, `Cache-Control: public, max-age=31536000, immutable` |
+| `/favicon.ico`, `/favicon.svg` | 200 |
+| `/robots.txt`, `/sitemap.xml`, `/.well-known/security.txt` | 200 |
 | `/does-not-exist` | 404, showing the "Page not found" page |
 | `http://nd40.com/` | 301 to `https://nd40.com/` |
-| `https://www.nd40.com/about` | 301 to `https://nd40.com/about` |
+| `https://www.nd40.com/work` | 301 to `https://nd40.com/work` |
 
 Then open the home page in a browser and confirm:
 

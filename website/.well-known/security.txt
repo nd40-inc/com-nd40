@@ -1,0 +1,4 @@
+Contact: mailto:admin@nd40.com
+Canonical: https://nd40.com/.well-known/security.txt
+Preferred-Languages: en
+Expires: 2027-11-26T00:00:00.000Z
