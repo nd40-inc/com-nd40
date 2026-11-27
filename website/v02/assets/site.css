@@ -780,6 +780,55 @@ nav[aria-label="Footer"] a[aria-current="page"] {
   color: var(--text-muted);
 }
 
+.cmp-card {
+  background: var(--surface);
+  border-radius: 20px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.cmp-card-label {
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: -0.01em;
+}
+
+.cmp-card .cmp-x {
+  margin: 0;
+  align-self: flex-start;
+  font-size: 44px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.cmp-card-nums {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.4;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.cmp-card-nums strong {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.cmp-card-vs {
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+.cmp-card .cmp-bar {
+  margin-top: auto;
+  height: 8px;
+  box-shadow: none;
+}
+
 .cmp-x {
   text-align: left;
   align-self: center;
