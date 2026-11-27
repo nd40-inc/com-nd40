@@ -613,15 +613,41 @@ nav[aria-label="Footer"] a[aria-current="page"] {
 }
 
 .team-name { align-self: start; }
-.team-row .team-metrics { margin-top: 1px; }
+.team-row .team-metrics {
+  display: grid;
+  grid-template-columns: 84px max-content;
+  gap: 2px 14px;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 1px;
+}
+.tm-k {
+  color: var(--text-muted);
+  text-align: right;
+}
+.tm-v {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
 .team-total { border-top-color: var(--border-strong); }
 
 @media (max-width: 760px) {
   .team-row {
     grid-template-columns: minmax(0, 1fr);
-    gap: 12px;
+    gap: 14px;
+    padding: 22px 0;
   }
   .team-head { display: none; }
+  .team-row .team-metrics {
+    grid-template-columns: max-content minmax(0, 1fr);
+    gap: 4px 16px;
+    padding: 12px 14px;
+    background: var(--surface-subtle);
+    border-radius: 10px;
+  }
+  .tm-k {
+    text-align: left;
+  }
   .team-role[data-label]::before,
   .team-name[data-label]::before {
     content: attr(data-label);
@@ -641,11 +667,11 @@ nav[aria-label="Footer"] a[aria-current="page"] {
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--text-faint);
-    margin-bottom: 2px;
+    margin-bottom: 4px;
   }
 }
 
-/* Three-card grids: three across down to 900px, two to 600px, then one */
+/* Three-card grids: three across on desktop (>= 900px), single vertical column below */
 .cards3 {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -654,8 +680,7 @@ nav[aria-label="Footer"] a[aria-current="page"] {
   max-width: 100%;
   height: auto;
 }
-@media (max-width: 899px) { .cards3 { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-@media (max-width: 600px) { .cards3 { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 899px) { .cards3 { grid-template-columns: minmax(0, 1fr); } }
 
 /* Case study stats (6 across) and engineering grid (4 across) */
 .cs-stats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); }
