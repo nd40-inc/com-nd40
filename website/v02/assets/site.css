@@ -1177,11 +1177,11 @@ nav[aria-label="Footer"] a[aria-current="page"] {
   width: min(100%, max(66%, 720px));
   margin: 0 auto;
   box-sizing: border-box;
-  font-size: clamp(24px, 2.5vw, 34px);
+  font-size: clamp(22px, 2.4vw, 34px);
   line-height: 1.15;
 }
 
-@media (min-width: 1120px) {
+@media (min-width: 760px) {
   .velocity-heading {
     white-space: nowrap;
   }
