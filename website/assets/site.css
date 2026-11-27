@@ -782,11 +782,17 @@ nav[aria-label="Footer"] a[aria-current="page"] {
 .cmp-x {
   text-align: left;
   align-self: center;
-  font-size: 32px;
-  font-weight: 600;
-  letter-spacing: -0.022em;
+  font-size: 40px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   line-height: 1;
   color: var(--accent);
+}
+
+.cmp-x-unit {
+  font-size: 0.54em;
+  font-weight: 600;
+  margin-left: 1px;
 }
 
 .cmp-bar {
@@ -815,7 +821,7 @@ nav[aria-label="Footer"] a[aria-current="page"] {
   .cmp-label { grid-area: 1 / 1 / 2 / 4; font-weight: 600; }
   .cmp-nd { grid-area: 2 / 1; }
   .cmp-st { grid-area: 2 / 2; }
-  .cmp-x { grid-area: 2 / 3; text-align: right; font-size: 26px; align-self: end; line-height: 1.05; }
+  .cmp-x { grid-area: 2 / 3; text-align: right; font-size: 32px; font-weight: 700; align-self: end; line-height: 1; }
   .cmp-bar { grid-area: 3 / 1 / 4 / 4; }
   .cmp-head { display: none; }
   .cmp-nd[data-label]::before,
@@ -1095,13 +1101,30 @@ nav[aria-label="Footer"] a[aria-current="page"] {
   --border: #E5E5EA;
   --border-strong: #C7C7CC;
   --accent: #E6007A;
-  --accent-green: #009914;
+  --accent-green: #34C759;
   --link: #0066CC;
   --link-hover: #004C99;
   --link-underline: rgba(0, 102, 204, 0.35);
   color: var(--text);
   border-image: conic-gradient(#FFFFFF 0 0) fill 0//0 100vmax;
   padding: 56px 0;
+}
+
+.hl-blue {
+  color: #007AFF;
+}
+
+.velocity-heading {
+  width: min(100%, max(66%, 720px));
+  margin: 0 auto;
+  box-sizing: border-box;
+  font-size: clamp(20px, 2.0vw, 25px);
+}
+
+@media (min-width: 760px) {
+  .velocity-heading {
+    white-space: nowrap;
+  }
 }
 
 /* Domains list (work.html) */
