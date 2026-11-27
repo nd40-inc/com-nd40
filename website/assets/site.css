@@ -277,10 +277,11 @@ main a:focus-visible {
 
 .feature-title {
   margin: 0;
-  font-size: 20px;
+  font-size: clamp(16px, 1.45vw, 19px);
   font-weight: 600;
-  letter-spacing: -0.018em;
+  letter-spacing: -0.02em;
   line-height: 1.25;
+  white-space: nowrap;
   color: var(--text);
 }
 
