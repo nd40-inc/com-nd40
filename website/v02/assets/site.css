@@ -159,8 +159,8 @@ a:focus-visible {
 
 .site-nav a:hover,
 .site-nav a:focus-visible {
-  background: rgba(41, 151, 255, 0.14);
-  color: var(--link);
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
 }
 
 .site-nav a[aria-current="page"] {
@@ -315,10 +315,11 @@ main a:focus-visible {
 
 .proof-delta {
   margin: 0;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 15px;
-  letter-spacing: 0;
-  color: var(--link);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  font-variant-numeric: tabular-nums;
+  color: #30D158;
 }
 
 .proof-body {
@@ -586,8 +587,8 @@ nav[aria-label="Footer"] a {
 
 nav[aria-label="Footer"] a:hover,
 nav[aria-label="Footer"] a:focus-visible {
-  background: rgba(41, 151, 255, 0.14);
-  color: var(--link);
+  background: rgba(255, 255, 255, 0.08);
+  color: #FFFFFF;
 }
 
 nav[aria-label="Footer"] a[aria-current="page"] {
@@ -807,14 +808,15 @@ nav[aria-label="Footer"] a[aria-current="page"] {
 
 @media (max-width: 700px) {
   .cmp-row {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-    gap: 14px 20px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) auto;
+    gap: 10px 16px;
+    align-items: end;
   }
-  .cmp-label { grid-area: 1 / 1; }
-  .cmp-x { grid-area: 1 / 2; text-align: right; }
+  .cmp-label { grid-area: 1 / 1 / 2 / 4; font-weight: 600; }
   .cmp-nd { grid-area: 2 / 1; }
   .cmp-st { grid-area: 2 / 2; }
-  .cmp-bar { grid-area: 3 / 1 / 4 / 3; }
+  .cmp-x { grid-area: 2 / 3; text-align: right; font-size: 26px; align-self: end; line-height: 1.05; }
+  .cmp-bar { grid-area: 3 / 1 / 4 / 4; }
   .cmp-head { display: none; }
   .cmp-nd[data-label]::before,
   .cmp-st[data-label]::before {
@@ -828,11 +830,13 @@ nav[aria-label="Footer"] a[aria-current="page"] {
   }
 }
 
-/* Case study MANTA team table */
+/* Case study MANTA team table (always 3 columns) */
 .team-list {
   margin: 0;
   padding: 0;
   list-style: none;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .team-row {
@@ -903,42 +907,22 @@ nav[aria-label="Footer"] a[aria-current="page"] {
 
 @media (max-width: 760px) {
   .team-row {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 14px;
-    padding: 22px 0;
+    grid-template-columns: minmax(110px, 0.75fr) minmax(205px, max-content) minmax(190px, 1.2fr);
+    gap: 10px 20px;
+    min-width: 560px;
+    padding: 16px 0;
   }
-  .team-head { display: none; }
   .team-row .team-metrics {
-    grid-template-columns: max-content minmax(0, 1fr);
-    gap: 4px 16px;
-    padding: 12px 14px;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
+    grid-template-columns: 72px max-content;
+    gap: 2px 10px;
+    font-size: 12.5px;
   }
-  .tm-k {
-    text-align: left;
+  .team-role,
+  .team-name-title {
+    font-size: 14.5px;
   }
-  .team-role[data-label]::before,
-  .team-name[data-label]::before {
-    content: attr(data-label);
-    display: block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-faint);
-    margin-bottom: 4px;
-  }
-  .team-metrics[data-label]::before {
-    content: attr(data-label);
-    grid-column: 1 / -1;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--text-faint);
-    margin-bottom: 4px;
+  .team-name-desc {
+    font-size: 12.5px;
   }
 }
 
