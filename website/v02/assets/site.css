@@ -285,6 +285,15 @@ main a:focus-visible {
   color: var(--text);
 }
 
+.cs-card-title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: -0.022em;
+  line-height: 1.15;
+  color: var(--text);
+}
+
 .feature-body {
   margin: 0;
   font-size: 15px;
@@ -1168,10 +1177,11 @@ nav[aria-label="Footer"] a[aria-current="page"] {
   width: min(100%, max(66%, 720px));
   margin: 0 auto;
   box-sizing: border-box;
-  font-size: clamp(20px, 2.0vw, 25px);
+  font-size: clamp(24px, 2.5vw, 34px);
+  line-height: 1.15;
 }
 
-@media (min-width: 760px) {
+@media (min-width: 1120px) {
   .velocity-heading {
     white-space: nowrap;
   }
